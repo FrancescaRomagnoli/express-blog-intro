@@ -8,7 +8,7 @@ const postArr = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor ac nulla interdum, in posuere libero malesuada.",
     image: "./img/ciambellone.jpeg",
-    tag: [
+    tags: [
       "cooking",
       "baking",
       "homestyle baking",
@@ -22,7 +22,7 @@ const postArr = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor ac nulla interdum, in posuere libero malesuada.",
     image: "./img/cracker_barbabietola.jpeg",
-    tag: [
+    tags: [
       "cooking",
       "baking",
       "homestyle cooking",
@@ -36,7 +36,7 @@ const postArr = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor ac nulla interdum, in posuere libero malesuada.",
     image: "./img/pane_fritto_dolce.jpeg",
-    tag: [
+    tags: [
       "cooking",
       "baking",
       "homestyle baking",
@@ -50,7 +50,7 @@ const postArr = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor ac nulla interdum, in posuere libero malesuada.",
     image: "./img/pasta_barbabietola.jpeg",
-    tag: [
+    tags: [
       "cooking",
       "baking",
       "homestyle baking",
@@ -63,7 +63,7 @@ const postArr = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor ac nulla interdum, in posuere libero malesuada.",
     image: "./img/torta_paesana.jpeg",
-    tag: [
+    tags: [
       "cooking",
       "baking",
       "homestyle baking",
@@ -82,8 +82,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/bacheca", (req, res) => {
-  //   const text = "Bacheca del mio blog";
-  res.json(postArr);
+  const responseObj = {
+    count: postArr.length,
+    posts: postArr,
+  };
+  res.json(responseObj);
 });
 
 app.listen(port, () => {
